@@ -22,6 +22,7 @@ $workTime = $_POST['timeWorkForm'];
 $cookTime = $_POST['timeCookForm'];
 $recette = $_POST['recipeForm'];
 $description = $_POST['descriptionForm'];
+$ingredients = $_POST['ingredients'];
 
 $nameImage = rand(1,1000000000);
 

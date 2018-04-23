@@ -132,7 +132,7 @@
 			<div class="control-group">
               <div class="form-group col-xs-12 floating-label-form-group controls">
                 <label>Liste des ingrédients</label>
-                <input type="text" class="form-control" placeholder="Liste ingrédients" id="baking" name="timeCookForm" required data-validation-required-message="Veuillez entrer un temps de cuisson.">
+                <input type="text" class="form-control" placeholder="Liste ingrédients" id="ingredients" name="ingredients" required data-validation-required-message="Veuillez entrer un temps de cuisson.">
                 <p class="help-block text-danger"></p>
               </div>
             </div>
