@@ -44,8 +44,8 @@ if(isset($_POST["submit"])) {
 // Check if file already exists
 if (file_exists($target_file)) {
     $uploadOk = 0;
-}
 // Check file size
+	}
 if ($_FILES["fileToUpload"]["size"] > 20000000) {
     $uploadOk = 0;
 }
@@ -148,7 +148,7 @@ if ($uploadOk == 0) {
 			{
 				$idUserRequest = $bdd->query('SELECT idUser from t_user where usrMail = "'.$_SESSION['user'].'";');
 				$idUser = $idUserRequest->fetch();
-				$bdd->query('INSERT INTO t_recipe(recDate, recVegan, recTitle, recDescription, recTimeWork, recTimeCook, recRecipe, recImage, idUser)VALUE("'.$date.'", "'.$vegan.'", "'.$title.'", "'.$description.'","'.$workTime.'", "'.$cookTime.'", "'.$recette.'", "'.$target_file.'", '.$idUser[0].')');
+				$bdd->query('INSERT INTO t_recipe(recDate, recVegan, recTitle, recDescription, recTimeWork, recTimeCook, recRecipe, recImage, recIngredients, idUser)VALUE("'.$date.'", "'.$vegan.'", "'.$title.'", "'.$description.'","'.$workTime.'", "'.$cookTime.'", "'.$recette.'", "'.$target_file.'", "'.$ingredients.'", '.$idUser[0].')');
 				echo "<h3>Recette ajoutée avec succès</h3>";
 			}
 			else

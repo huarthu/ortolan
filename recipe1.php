@@ -111,34 +111,46 @@
     </header>
 
     <!-- Post Content -->
-    <article>
-      <div class="container">
-        <div class="row">
-			<div class="recipe">
-              <i class="fa fa-cog" aria-hidden="true"></i>
-			  <p>
-              <?php
-				echo $donnees['recTimeWork'];
-				?>
+<article>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-md-3 mx-auto">
+				<i class="fa fa-cog" aria-hidden="true"></i>
+				<p>
+					<?php echo $donnees['recTimeWork']; ?>
 				</p>
-              <i class="fa fa-fire" aria-hidden="true"></i>
-              <p>
-			  <?php
-				echo $donnees['recTimeCook'];
-				?>
-			  </p>
-              <i class="fa fa-paw" aria-hidden="true"></i>
+				<i class="fa fa-fire" aria-hidden="true"></i>
+				<p>
+					<?php echo $donnees['recTimeCook']; ?>
+				</p>
+				<i class="fa fa-paw" aria-hidden="true"></i>
 			</div>
-          <div class="col-lg-8 col-md-10 mx-auto">
-		  <p>
-            <?php
-				echo $donnees['recRecipe']
-			?>
-			</p>
-          </div>
-        </div>
-      </div>
-    </article>
+			<div class="col-sm-3 col-md-3 mx-auto">
+				<h3>
+					Ingrédients
+				</h3>
+				<p>
+					<?php 
+					$ingredientsArray = explode(",",$donnees['recIngredients']);
+					for($i = 0; $i < count($ingredientsArray); $i++)
+					{
+						echo "<span class='badge badge-secondary'>$ingredientsArray[$i]</span>\n";
+					}
+					?>
+				</p>
+			</div>
+			<div class="col-sm-3 col-xl-6 mx-auto">
+				<h3>
+					Recette
+				</h3>
+				<p>
+					<?php echo $donnees['recRecipe'] ?>
+				</p>
+			</div>
+			
+		</div>
+	</div>
+</article>
 
     <hr>
 	<?php
